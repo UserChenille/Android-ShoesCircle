@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ShoesCircleAndroid</string>
+    <string name="login_tips">登录即可享受更多功能\n登录即代表你已阅读并同意鞋圈 用户服务协议</string>
+    <string name="bind_phone_tips">应监管部门要求，互联网用户必须绑定手机号码。 给您带来不便敬请谅解！</string>
+    <string name="next_level_tips">距离升级还有%1$s积分</string>
+    <string name="vip_desc">您是%1$s</string>
+    <string name="trade_desc">交易手续费降低至%1$s%%</string>
+    <string name="item_size">尺码：%1$s&#160;&#160;%2$s</string>
+    <string name="money_value">¥%1$s</string>
+
+    <string name="errcode_success">分享成功</string>
+    <string name="errcode_cancel">分享取消</string>
+    <string name="errcode_deny">分享拒绝</string>
+    <string name="errcode_unknown">分享失败，未知原因</string>
+</resources>

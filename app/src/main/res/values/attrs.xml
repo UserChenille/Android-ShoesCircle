@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IndexSideBarView">
+        <attr name="idx_selected_background_color" format="color"/>
+        <attr name="idx_selected_text_color" format="color"/>
+        <attr name="idx_text_color" format="color"/>
+        <attr name="idx_indicate_background_color" format="color"/>
+        <attr name="idx_indicate_text_color" format="color"/>
+        <attr name="idx_text_size" format="dimension"/>
+        <attr name="idx_indicate_text_size" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <com.zjzf.shoescircle.ui.widget.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:right_text_color="@color/common_red"
+        app:title_text="扫码结果"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_qr_result"
+                android:layout_width="313dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/bg_dash_rect"
+                android:padding="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_default_qr_result"/>
+
+            <LinearLayout
+                android:id="@+id/layout_auto_scan_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                    android:id="@+id/tv_ship_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black1"
+                    android:textSize="@dimen/number_medium"
+                    android:textStyle="bold"
+                    tools:text="110730858135"/>
+
+                <LinearLayout
+                    android:id="@+id/layout_ship_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                        android:id="@+id/tv_ship_company"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:text="请选择快递公司"
+                        android:textColor="@color/color_black1"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/drawable_triangle_down"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_input_scan_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/layout_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="物流单号"
+                        android:textColor="@color/color_black3"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                        android:id="@+id/ed_input_ship_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入物流单号"
+                        android:inputType="number"
+                        />
+                </LinearLayout>
+
+                <View
+                    style="@style/basedivider_1dp"/>
+
+                <TextView
+                    android:id="@+id/tv_select_ship_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/common_selector_white"
+                    android:drawableRight="@drawable/arrow_gray_right"
+                    android:padding="16dp"
+                    android:text="请选择物流公司"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:text="请核对物流单号以及物流公司信息无误后确认发货"
+                android:textColor="@color/color_black3"
+                android:textSize="@dimen/text_small"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+        android:id="@+id/btn_sure_to_ship"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确认发货"
+        android:textColor="@color/white"
+        app:backgroundColor="@color/colorPrimary"/>
+</LinearLayout>

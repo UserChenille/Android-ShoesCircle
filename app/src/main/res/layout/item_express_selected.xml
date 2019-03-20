@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zjzf.shoescircle.ui.widget.strokelayout.StrokeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                                xmlns:tools="http://schemas.android.com/tools"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:background="@drawable/common_selector_white"
+                                                                android:orientation="horizontal"
+                                                                android:padding="8dp"
+                                                                app:exclude_side="none"
+                                                                app:stroke_color="@color/color_black3"
+                                                                app:stroke_width="0.5dp">
+
+    <ImageView
+        android:id="@+id/iv_express_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        tools:src="@drawable/ic_express"/>
+
+    <TextView
+        android:id="@+id/tv_express_company_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/text_normal"
+        tools:text="1234"/>
+
+</com.zjzf.shoescircle.ui.widget.strokelayout.StrokeLinearLayout>

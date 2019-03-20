@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EA5757</color>
+    <color name="colorPrimaryDark">#b74444</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="default_window_color">#F4F4F4</color>
+
+    <!--<color name="black_70">#B2000000</color>-->
+    <color name="black_50">#80000000</color>
+    <color name="black_70">#B2000000</color>
+    <color name="white_70">#B2FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="common_click">#aeebf0fa</color>
+
+    <color name="text_color_2">#333333</color>
+    <color name="text_color_3">#999999</color>
+
+    <color name="price">#F05454</color>
+
+    <color name="delete_click_bg">#EAEAEA</color>
+    <color name="rating_selected">#FF8A48</color>
+    <color name="rating_normal">#F2e6dc</color>
+
+
+</resources>

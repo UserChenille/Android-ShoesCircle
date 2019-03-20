@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--empty-->
+    <item name="py_empty_view" type="id"/>
+    <item name="banner_imageview_tag_key" type="id"/>
+    <item name="py_statusbar_placeholder" type="id"/>
+
+    <item name="banner_view_tag_1" type="id"/>
+    <item name="banner_view_tag_2" type="id"/>
+    <item name="banner_view_tag_3" type="id"/>
+    <item name="banner_view_tag_4" type="id"/>
+    <item name="banner_view_tag_5" type="id"/>
+
+    <!--titlebar-->
+    <item name="title_bar_view" type="id"/>
+    <item name="title_bar_layout_left" type="id"/>
+    <item name="title_bar_layout_right" type="id"/>
+    <item name="title_bar_text_left" type="id"/>
+    <item name="title_bar_text_right" type="id"/>
+    <item name="title_bar_icon_left" type="id"/>
+    <item name="title_bar_icon_right" type="id"/>
+    <item name="title_bar_title" type="id"/>
+    <item name="title_bar_root" type="id"/>
+
+</resources>

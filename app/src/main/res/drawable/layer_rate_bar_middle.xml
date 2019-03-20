@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 必须使用此id,drawable为 未选中 状态的图片 -->
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/ic_rate_star_normal_middle"/>
+    <!-- 必须使用此id,drawable为 半选中 状态的图片 -->
+    <item
+        android:id="@android:id/secondaryProgress"
+        android:drawable="@drawable/ic_rate_star_selected_middle"/>
+    <!-- 必须使用此id,drawable为 全选中 状态的图片 -->
+    <item
+        android:id="@android:id/progress"
+        android:drawable="@drawable/ic_rate_star_selected_middle"/>
+</layer-list>

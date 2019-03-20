@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <cn.bingoogolapple.qrcode.zxing.ZXingView
+                android:id="@+id/qr_scan"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".8"
+                app:qrcv_animTime="1000"
+                app:qrcv_borderColor="#FF8F8B8B"
+                app:qrcv_borderSize="1dp"
+                app:qrcv_cornerColor="@android:color/transparent"
+                app:qrcv_cornerLength="20dp"
+                app:qrcv_cornerSize="3dp"
+                app:qrcv_isAutoZoom="true"
+                app:qrcv_isBarcode="true"
+                app:qrcv_isScanLineReverse="true"
+                app:qrcv_isShowTipBackground="true"
+                app:qrcv_maskColor="#33000000"
+                app:qrcv_qrCodeTipText="对准物流单上的条形码"
+                app:qrcv_rectWidth="300dp"
+                app:qrcv_scanLineColor="#FFFF533B"
+                app:qrcv_tipBackgroundColor="#5f000000"
+                app:qrcv_tipTextColor="@android:color/white"
+                app:qrcv_tipTextMargin="6dp"
+                app:qrcv_topOffset="100dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_input_qr"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".2"
+                android:background="#1A1D21"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_input_qr"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="手动输入物流单号"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="8dp"
+            android:drawableTop="@drawable/ic_flash"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:text="打开闪光灯"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_small"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:src="@drawable/ic_close_white"/>
+    </FrameLayout>
+</LinearLayout>

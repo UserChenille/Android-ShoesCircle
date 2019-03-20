@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--<item name="android:windowFullscreen">false</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--<item name="android:fitsSystemWindows">true</item>-->
+        <!--<item name="android:clipToPadding">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">false</item>-->
+    </style>
+
+    <!--<style name="AppTheme" parent="Theme.AppCompat">-->
+    <!-- Customize your theme here. -->
+    <!--<item name="android:windowTranslucentStatus">true</item>-->
+    <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    <!--<item name="android:windowBackground">@null</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:windowFullscreen">false</item>-->
+    <!--<item name="android:windowContentOverlay">@null</item>-->
+    <!--<item name="android:fitsSystemWindows">true</item>-->
+    <!--<item name="android:clipToPadding">true</item>-->
+    <!--</style>-->
+
+    <!--<style name="TransTheme" parent="AppTheme">-->
+    <!--<item name="android:windowIsTranslucent">true</item>-->
+    <!--</style>-->
+
+    <!--<style name="FullscreenTheme" parent="Theme.AppCompat">-->
+    <!--<item name="android:windowTranslucentStatus">true</item>-->
+    <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:windowFullscreen">false</item>-->
+    <!--<item name="android:windowBackground">@null</item>-->
+    <!--<item name="android:windowContentOverlay">@null</item>-->
+    <!--<item name="android:activityOpenEnterAnimation">@anim/fade_in</item>-->
+    <!--<item name="android:activityCloseExitAnimation">@anim/fade_out</item>-->
+    <!--</style>-->
+
+</resources>

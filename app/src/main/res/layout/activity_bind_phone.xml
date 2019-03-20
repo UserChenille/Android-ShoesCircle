@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_splash"/>
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.zjzf.shoescircle.ui.widget.TitleBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon_left="@drawable/ic_close"
+            app:title_text="绑定手机"
+            app:transparentMode="true"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:animateLayoutChanges="true"
+            android:clipToPadding="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/ll_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_username"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="请输入手机号"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="13"
+                    android:padding="16dp"
+                    android:textSize="14sp"
+                    app:formatMode="phone"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_warn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:paddingBottom="16dp"
+                android:text="手机号码格式不正确!"
+                android:textColor="@color/common_warn"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_verifycode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_verifycode"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="验证码"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:padding="16dp"
+                    android:textSize="14sp"
+                    />
+
+                <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+                    android:id="@+id/btn_send_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发送验证码"
+                    android:textAllCaps="false"
+                    android:textColor="@color/common_black"
+                    app:backgroundColor="@color/common_black"
+                    app:corner_radius="20dp"
+                    app:drawable_vertical_reduce="8dp"
+                    app:strokeMode="true"
+                    app:stroke_Width="1dp"
+                    app:type="round_rect"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                />
+
+            <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:enabled="false"
+                android:text="完成"
+                android:textColor="@color/common_black"
+                app:strokeMode="true"
+                app:stroke_Width="1dp"
+                app:type="round_rect"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:padding="32dp"
+            android:text="@string/bind_phone_tips"
+            android:textColor="@color/common_title_sub_text_color"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PullRecyclerView">
+        <attr name="android:background"/>
+    </declare-styleable>
+
+    <declare-styleable name="StatusBarViewPlaceHolder">
+        <attr name="android:background"/>
+        <attr name="autoAdjustBackground" format="boolean"/>
+        <attr name="autoAdjustStatusBarMode" format="boolean"/>
+        <attr name="statusBarMode">
+            <enum name="normal" value="0"/>
+            <enum name="dark" value="1"/>
+            <enum name="light" value="2"/>
+        </attr>
+    </declare-styleable>
+
+
+    <!--饼图的进度条-->
+    <declare-styleable name="CircleProgressView">
+        <attr name="inner_circle_size" format="dimension"/>
+        <attr name="inner_circle_color" format="color"/>
+        <attr name="inner_text_color" format="color"/>
+        <attr name="inner_text_size" format="dimension"/>
+        <attr name="stroke_margin" format="dimension"/>
+        <attr name="stroke_color" format="color"/>
+        <attr name="stroke_width" format="dimension"/>
+        <attr name="current_progress" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color"/>
+        <attr name="pstsUnderlineColor" format="color"/>
+        <attr name="pstsDividerColor" format="color"/>
+        <attr name="pstsIndicatorHeight" format="dimension"/>
+        <attr name="pstsUnderlineHeight" format="dimension"/>
+        <attr name="pstsDividerPadding" format="dimension"/>
+        <attr name="pstsTabPaddingLeftRight" format="dimension"/>
+        <attr name="pstsScrollOffset" format="dimension"/>
+        <attr name="pstsTabBackground" format="reference"/>
+        <attr name="pstsShouldExpand" format="boolean"/>
+        <attr name="pstsTextAllCaps" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="UnderLineLinearLayout">
+        <!--时间轴偏移值-->
+        <attr name="line_margin_side" format="dimension"/>
+        <!--时间轴动态调整值-->
+        <attr name="line_dynamic_dimen" format="dimension"/>
+        <!--线宽-->
+        <attr name="line_stroke_width" format="dimension"/>
+        <!--线的颜色-->
+        <attr name="line_color" format="color"/>
+        <!--点的大小-->
+        <attr name="point_size" format="dimension"/>
+        <!--点的颜色-->
+        <attr name="point_color" format="color"/>
+        <!--图标-->
+        <attr name="icon_src" format="reference"/>
+        <!--时间轴的gravity-->
+        <!--the gravity of the timeline-->
+        <attr name="line_gravity">
+            <enum name="Left" value="2"/>
+            <enum name="Right" value="4"/>
+            <enum name="Middle" value="0"/>
+            <enum name="Top" value="1"/>
+            <enum name="Bottom" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

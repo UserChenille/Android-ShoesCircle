@@ -1,0 +1,215 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+
+static def getDateTime() {
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    return df.format(new Date())
+}
+
+static def getSimpleDateTime() {
+    DateFormat df = new SimpleDateFormat("yyyyMMdd_HH时mm分")
+    return df.format(new Date())
+}
+
+static def getChineseTime() {
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd")
+    return df.format(new Date())
+}
+
+ext { // 定义当前gradle文件的全局变量
+    isRelease = checkRelease()
+}
+
+// 通过task判断是否为release，比判断Variant好
+def checkRelease() {
+    def runTasks = gradle.startParameter.taskNames
+    for (String task : runTasks) {
+        // 我这里根据task为"assemble"和非"Debug"认定为release
+        if (task.toLowerCase().contains("assemble") && !task.toLowerCase().contains("debug")) {
+            return true
+        }
+    }
+    return false
+}
+
+bugly {
+    appId = '705dc41af5'
+    appKey = 'a9bcc359-9985-40da-b049-260710f9c0af'
+    debug = true // 打开debug模式可以观察到日志
+    execute = isRelease // 仅在release包中使用bugly
+    upload = isRelease
+    uploadMapping = isRelease
+}
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.zjzf.shoescircleandroid"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 20
+        versionName "1.5.0"
+
+        flavorDimensions "shoesCircle"
+
+        renderscriptTargetApi 26
+        renderscriptSupportModeEnabled true
+
+//        音视频通话组件 CallLib 仅支持 armeabi-v7a 和 x86 架构 CPU
+        ndk {
+            abiFilters 'armeabi','armeabi-v7a', 'x86'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'key0'
+            keyPassword 'dengpao'
+            storeFile file('../keystore.jks')
+            storePassword 'dengpao'
+        }
+
+        release {
+            keyAlias 'key0'
+            keyPassword 'dengpao'
+            storeFile file('../keystore.jks')
+            storePassword 'dengpao'
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "RELEASE_TIME", "\"" + getDateTime() + "d\""
+            buildConfigField "Boolean", "CONFIG_SERVER", "true"
+            resValue("string", "PORT_NUMBER", "8088")
+            signingConfig signingConfigs.debug
+            multiDexEnabled true
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled true
+            multiDexEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "RELEASE_TIME", "\"" + getDateTime() + "r\""
+            buildConfigField "Boolean", "CONFIG_SERVER", "false"
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = true
+        maxProcessCount = 4
+    }
+    //jni
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs = [] //disable automatic ndk-build call
+        }
+    }
+    productFlavors {
+        ultimate {
+            buildConfigField "Boolean", "CONFIG_SERVER", "true"
+            def time = getDateTime()
+            println "====================[更新时间{ultimate}：$time]======================="
+            buildConfigField "String", "ULTIMATE_TIME", "\"" + time + "\""
+
+            buildConfigField "Boolean", "IS_DEV", "true"
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outPath = "../app/outPuts/" + getChineseTime() + "/"
+            if (variant.buildType.name == "release") { // 判断编译的类型
+                // 命名：文件名_版本号_编译日期_渠道名.apk
+                outputFileName = (String) ("鞋圈"
+                        + "_" + variant.mergedFlavor.versionName
+                        + "_" + variant.productFlavors.name
+                        + getSimpleDateTime() + ".apk")
+
+                if (variant.getBuildType().isMinifyEnabled()) {
+                    if (variant.hasProperty('assembleProvider')) {
+                        variant.assembleProvider.get().doLast {
+                            copy {
+                                println "==== 启动复制： ${variant.name} ===="
+                                from(output.outputFile.parent + "/" + outputFileName)
+                                into outPath
+                            }
+                            copy {
+                                from variant.mappingFile
+                                into(outPath + "mapping/")
+                                rename { String fileName ->
+                                    "mapping_${variant.mergedFlavor.versionName}.txt"
+                                }
+                            }
+
+
+                            File oldFile = new File(output.outputFile.parent).getParentFile()
+                            if (oldFile != null) {
+                                println "==== 删除文件： ${oldFile.getAbsolutePath()} ===="
+                                delete oldFile
+                            }
+
+//                        delete variant.outputs*.outputFile
+
+                            println "==== 打包路径： ${new File(outPath, outputFileName).getParentFile().getAbsolutePath()} ===="
+                            println "==== 打包完成： ${variant.name} ===="
+                        }
+                    } else {
+                        variant.assemble.doLast {
+                            copy {
+                                println "==== 启动复制： ${variant.name} ===="
+                                from(output.outputFile.parent + "/" + outputFileName)
+                                into outPath
+                            }
+                            copy {
+                                from variant.mappingFile
+                                into(outPath + "mapping/")
+                                rename { String fileName ->
+                                    "mapping_${variant.mergedFlavor.versionName}.txt"
+                                }
+                            }
+
+
+                            File oldFile = new File(output.outputFile.parent).getParentFile()
+                            if (oldFile != null) {
+                                println "==== 删除文件： ${oldFile.getAbsolutePath()} ===="
+                                delete oldFile
+                            }
+
+//                        delete variant.outputs*.outputFile
+
+                            println "==== 打包路径： ${new File(outPath, outputFileName).getParentFile().getAbsolutePath()} ===="
+                            println "==== 打包完成： ${variant.name} ===="
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':uilib')
+    implementation project(':IMKit')
+
+    debugImplementation('com.amitshekhar.android:debug-db:1.0.2') {
+        exclude group: 'com.google.code.gson'
+    }
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    //wechat
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    implementation 'com.simple:spiderman:1.1.0'
+    implementation (name: 'alipaySdk-15.6.0-20190226104053', ext: 'aar')
+
+}

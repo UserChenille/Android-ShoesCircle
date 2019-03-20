@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="MergeRootFrame"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_index"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/common_selector">
+
+            <TextView
+                android:id="@+id/tv_index"
+                style="@style/HomeBottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/selector_tab_index"
+                android:text="首页"
+                android:textColor="@drawable/selector_tab_text"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_msg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/common_selector">
+
+            <TextView
+                android:id="@+id/tv_msg"
+                style="@style/HomeBottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/selector_tab_msg"
+                android:text="消息"
+                android:textColor="@drawable/selector_tab_text"/>
+
+            <TextView
+                android:id="@+id/tv_msg_num"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignRight="@id/tv_msg"
+                android:layout_alignTop="@id/tv_msg"
+                android:layout_marginRight="-10dp"
+                android:layout_marginTop="-5dp"
+                android:background="@drawable/bg_red_dot"
+                android:gravity="center"
+                android:text="16"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/common_selector">
+
+            <TextView
+                android:id="@+id/tv_me"
+                style="@style/HomeBottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/selector_tab_me"
+                android:text="我"
+                android:textColor="@drawable/selector_tab_text"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

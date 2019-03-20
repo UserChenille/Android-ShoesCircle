@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_common"
+              android:orientation="vertical">
+
+
+    <com.zjzf.shoescircle.ui.widget.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="编辑资料"/>
+
+    <LinearLayout
+        android:id="@+id/ll_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/common_selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="头像"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/text_large"/>
+
+        <com.zjzf.shoescircle.lib.widget.imageview.RoundedImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            app:is_oval="true"
+            tools:src="@mipmap/ic_launcher"/>
+    </LinearLayout>
+
+    <View
+        style="@style/basedivider_1dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_nick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="昵称"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/text_large"/>
+
+        <TextView
+            android:id="@+id/tv_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_gray_right"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/text_normal"/>
+    </LinearLayout>
+
+    <View
+        style="@style/basedivider_1dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="性别"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/text_large"/>
+
+        <TextView
+            android:id="@+id/tv_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_gray_right"
+            android:gravity="center_vertical"
+            android:text="女"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/text_normal"/>
+    </LinearLayout>
+
+    <View
+        style="@style/basedivider_1dp"/>
+</LinearLayout>

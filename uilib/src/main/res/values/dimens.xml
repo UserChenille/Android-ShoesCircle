@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用布局间隔-->
+    <dimen name="vertical_same_padding">16dp</dimen>
+    <dimen name="vertical_same_padding_small">8dp</dimen>
+    <dimen name="vertical_diff_padding">32dp</dimen>
+    <dimen name="vertical_special_small_padding">6dp</dimen>
+    <dimen name="vertical_special_medium_padding">24dp</dimen>
+    <dimen name="vertical_special_large_padding">48dp</dimen>
+    <dimen name="horizontal_small_padding">6dp</dimen>
+    <dimen name="horizontal_medium_padding">10dp</dimen>
+    <dimen name="horizontal_large_padding">12dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+
+    <!--旧版字体标准-->
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="text_title_small">16sp</dimen>
+    <dimen name="text_title_normal">20sp</dimen>
+    <dimen name="text_title_large">24sp</dimen>
+    <dimen name="text_item">14sp</dimen>
+    <dimen name="text_button_normal">14sp</dimen>
+    <dimen name="text_button_small">12sp</dimen>
+    <dimen name="text_button_large">16sp</dimen>
+
+    <!--新版字体标准-->
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_nano">10sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="title_activity">24sp</dimen>
+    <dimen name="title_module">16sp</dimen>
+    <dimen name="number_small">16sp</dimen>
+    <dimen name="number_medium">20sp</dimen>
+    <dimen name="number_large">28sp</dimen>
+
+    <!--表单高度标准-->
+    <dimen name="list_height_small">48dp</dimen>
+    <dimen name="list_height_medium">52dp</dimen>
+    <dimen name="list_height_large">70dp</dimen>
+
+    <!--图片宽高，只是建议-->
+    <dimen name="icon_height">40dp</dimen>
+    <dimen name="icon_width">40dp</dimen>
+
+</resources>

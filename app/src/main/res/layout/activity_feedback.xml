@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_common"
+              android:orientation="vertical">
+
+
+    <com.zjzf.shoescircle.ui.widget.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="意见&amp;反馈"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/ed_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="请建议或者问题反馈，鞋圈将因你而成为更好的产品"
+                    android:minLines="8"
+                    android:padding="16dp"
+                    android:textColor="@color/color_black1"
+                    android:textColorHint="#CCCCCC"
+                    android:textSize="@dimen/text_normal"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"/>
+
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/ed_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="填写你的QQ或微信"
+                android:padding="16dp"
+                android:textColor="@color/color_black1"
+                android:textColorHint="#CCCCCC"
+                android:textSize="@dimen/text_normal"/>
+
+            <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+                android:id="@+id/btn_apply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="80dp"
+                android:text="提交"
+                android:textColor="@color/color_black1"
+                android:textSize="@dimen/text_normal"
+                app:backgroundColor="@color/color_black1"
+                app:strokeMode="true"
+                app:stroke_Width="1dp"
+                app:type="round_rect"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

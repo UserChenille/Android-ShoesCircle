@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_common"
+              android:orientation="vertical">
+
+
+    <com.zjzf.shoescircle.ui.widget.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mode="mode_both"
+        app:right_text_color="@color/common_red"
+        app:text_right="完成"
+        app:title_text="发布求货"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="名称"
+                    android:textColor="@color/color_black1"
+                    android:textSize="@dimen/text_normal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="32dp">
+
+                    <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                        android:id="@+id/ed_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入"
+                        android:textColorHint="@color/color_hint_deep"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <ImageView
+                        android:id="@+id/iv_arrow_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/arrow_gray_right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/basedivider_1dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_art_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="货号"
+                    android:textColor="@color/color_black1"
+                    android:textSize="@dimen/text_normal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="32dp">
+
+                    <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                        android:id="@+id/ed_art_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="right|center_vertical"
+                        android:hint="请输入"
+                        android:textColorHint="@color/color_hint_deep"
+                        android:textSize="@dimen/text_normal"/>
+
+                    <ImageView
+                        android:id="@+id/iv_arrow_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/arrow_gray_right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/basedivider_1dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="尺码"
+                    android:textColor="@color/color_black1"
+                    android:textSize="@dimen/text_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:background="@android:color/transparent"
+                    android:drawableRight="@drawable/arrow_gray_right"
+                    android:gravity="right|center_vertical"
+                    android:hint="请选择"
+                    android:textColorHint="@color/color_hint_deep"
+                    android:textSize="@dimen/text_normal"/>
+            </LinearLayout>
+
+            <View style="@style/basedivider"/>
+
+            <LinearLayout
+                android:id="@+id/ll_prise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="求货价格（选填）"
+                    android:textColor="@color/color_black1"
+                    android:textSize="@dimen/text_normal"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_prise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:background="@android:color/transparent"
+                    android:gravity="right"
+                    android:hint="请输入"
+                    android:textColorHint="@color/color_hint_deep"
+                    android:textSize="@dimen/text_normal"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

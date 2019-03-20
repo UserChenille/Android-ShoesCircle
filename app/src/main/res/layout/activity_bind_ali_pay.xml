@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <com.zjzf.shoescircle.ui.widget.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mode="mode_both"
+        app:right_text_color="@color/common_red"
+        app:text_right="确定"
+        app:title_text="绑定支付宝"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="真实姓名"
+                android:textColor="@color/color_black1"
+                android:textSize="@dimen/text_normal"/>
+
+            <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                android:id="@+id/ed_real_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="right|center_vertical"
+                android:hint="请输入您的真实姓名"
+                android:padding="16dp"
+                app:hintSize="@dimen/text_small"/>
+        </LinearLayout>
+
+        <View style="@style/basedivider"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支付宝帐号"
+                android:textColor="@color/color_black1"
+                android:textSize="@dimen/text_normal"/>
+
+            <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                android:id="@+id/ed_ali_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="right|center_vertical"
+                android:hint="请输入您的支付宝账号"
+                android:padding="16dp"
+                app:hintSize="@dimen/text_small"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

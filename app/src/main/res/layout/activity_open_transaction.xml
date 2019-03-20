@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <com.zjzf.shoescircle.ui.widget.TitleBarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:left_text_color="@color/colorPrimary"
+        app:text_left="取消"
+        app:title_text="平台担保交易"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/common_F1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.zjzf.shoescircle.lib.widget.imageview.RoundedImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:is_oval="true"
+                    tools:src="@drawable/rc_ext_realtime_default_avatar"/>
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"
+                    tools:text="向十七莉发起收款"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="金额"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="right|center_vertical"
+                    android:hint="请输入金额"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/number_large"
+                    app:hintSize="@dimen/number_large"
+                    tools:text="1258"/>
+
+            </LinearLayout>
+
+            <View style="@style/basedivider_1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_fee_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="手续费（4%）"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+                <TextView
+                    android:id="@+id/tv_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手续费（4%）"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="最后收入"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_real_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"/>
+
+            </LinearLayout>
+
+            <View style="@style/basedivider_bold_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="产品名称"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_product_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="right|center_vertical"
+                    android:hint="请输入名称"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"
+                    app:hintSize="@dimen/text_normal"
+                    tools:text="测试商品名字"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="货号"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_product_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="right|center_vertical"
+                    android:hint="请输入货号"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"
+                    app:hintSize="@dimen/text_normal"
+                    tools:text="测试商品货号"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="16dp"/>
+
+            <LinearLayout
+                android:id="@+id/layout_selecte_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="尺码"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="6dp"
+                    android:drawableRight="@drawable/arrow_gray_right"
+                    android:gravity="center_vertical"
+                    android:hint="请选择"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="数量"
+                    android:textColor="@color/color_black3"
+                    android:textSize="@dimen/text_normal"/>
+
+                <com.zjzf.shoescircle.ui.widget.edit.ExEditText
+                    android:id="@+id/ed_product_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="right|center_vertical"
+                    android:hint="请输入数量"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_normal"
+                    app:hintSize="@dimen/text_normal"
+                    tools:text="1"/>
+
+            </LinearLayout>
+
+            <View style="@style/basedivider_bold_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="平台交易服务须知"
+                    android:textColor="@color/color_black1"
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_rules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:lineSpacingExtra="1.2dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/transaction_rule"
+                    android:textColor="@color/color_black2"
+                    android:textSize="@dimen/text_small"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+        android:id="@+id/btn_open_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="发起收款"
+        android:textColor="@color/white"
+        app:backgroundColor="@color/colorPrimary"
+        app:textDisableColor="@color/white_50"/>
+</LinearLayout>

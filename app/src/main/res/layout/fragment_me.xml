@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--header-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="24dp">
+
+                <com.zjzf.shoescircle.lib.widget.imageview.RoundedImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_error"
+                    app:is_oval="true"/>
+
+                <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+                    android:id="@+id/btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6dp"
+                    android:drawableLeft="@drawable/ic_edit"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:text="编辑"
+                    android:textColor="#666666"
+                    app:backgroundColor="#F2EFED"
+                    app:corner_radius="8dp"
+                    app:type="round_rect"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/btn_edit"
+                    android:layout_toRightOf="@id/iv_avatar"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                        android:id="@+id/tv_nick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="该用户很懒"
+                        android:textColor="@color/common_black"
+                        android:textSize="16sp"/>
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:isIndicator="true"
+                        android:minHeight="16dp"
+                        android:numStars="5"
+                        app:mrb_progressTint="@color/rating_selected"
+                        app:mrb_secondaryProgressTint="@color/rating_normal"
+                        tools:rating="1.5">
+                    </me.zhanghai.android.materialratingbar.MaterialRatingBar>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <ProgressBar
+                    android:id="@+id/progress_level"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:max="100"
+                    android:progressDrawable="@drawable/layer_progress_bar"
+                    />
+
+                <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                    android:id="@+id/tv_cur_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="16dp"
+                    android:text="白金会员"
+                    android:textColor="@color/text_color_2"
+                    android:textSize="12sp"/>
+
+                <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                    android:id="@+id/tv_next_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="16dp"
+                    android:text="@string/next_level_tips"
+                    android:textColor="@color/text_color_2"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                android:id="@+id/tv_level_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/vip_desc"
+                android:textColor="@color/text_color_3"
+                android:textSize="12sp"/>
+
+            <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                android:id="@+id/tv_level_desc_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
+                android:text="@string/trade_desc"
+                android:textColor="@color/text_color_3"
+                android:textSize="12sp"/>
+
+            <View
+                style="@style/basedivider_bold_top_16"/>
+
+            <LinearLayout
+                android:id="@+id/ll_my_buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_me_my_buy"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:drawableRight="@drawable/arrow_gray_right"
+                    android:gravity="center_vertical"
+                    android:text="我的求货"
+                    android:textColor="@color/common_black"/>
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_my_sold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_me_my_sold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="我的出售"
+                    android:textColor="@color/common_black"/>
+
+                <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                    android:id="@+id/tv_no_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_me_no_send"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:text="1个未发货"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_gray_right"/>
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_verify_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_me_verify_account"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="帐号认证"
+                    android:textColor="@color/common_black"/>
+
+                <com.zjzf.shoescircle.ui.widget.textview.ExTextView
+                    android:id="@+id/tv_verify_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:text="未认证"
+                    android:textColor="@color/text_color_3"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_gray_right"/>
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_my_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_selector"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_me_feedback"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:drawableRight="@drawable/arrow_gray_right"
+                    android:gravity="center_vertical"
+                    android:text="反馈&amp;建议"
+                    android:textColor="@color/common_black"/>
+            </LinearLayout>
+
+            <View
+                style="@style/basedivider_1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

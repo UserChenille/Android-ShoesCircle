@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_splash"/>
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.zjzf.shoescircle.ui.widget.TitleBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:icon_left="@drawable/ic_close"
+            app:title_text=" "
+            app:transparentMode="true"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:clipToPadding="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:src="@drawable/ic_logo"
+                tools:alpha="1"
+                />
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:alpha="0"
+                android:gravity="center"
+                android:lineSpacingExtra="1.2dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/login_tips"
+                android:textColor="@color/common_title_sub_text_color"
+                tools:alpha="1"
+                />
+
+            <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+                android:id="@+id/btn_qq_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:alpha="0"
+                android:text="QQ登录"
+                android:textColor="@color/common_black"
+                app:backgroundColor="@color/common_black"
+                app:backgroundPressedColor="@color/common_title_sub_text_color"
+                app:strokeMode="true"
+                app:stroke_Width="1dp"
+                app:textPressedColor="@color/common_title_sub_text_color"
+                app:type="round_rect"
+                tools:alpha="1"/>
+
+            <com.zjzf.shoescircle.ui.widget.textview.button.ExButton
+                android:id="@+id/btn_wechat_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:layout_marginTop="16dp"
+                android:alpha="0"
+                android:text="微信登录"
+                android:textColor="@color/common_black"
+                app:backgroundColor="@color/common_black"
+                app:backgroundPressedColor="@color/common_title_sub_text_color"
+                app:strokeMode="true"
+                app:stroke_Width="1dp"
+                app:textPressedColor="@color/common_title_sub_text_color"
+                app:type="round_rect"
+                tools:alpha="1"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

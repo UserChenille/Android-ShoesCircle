@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug{
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support:design:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //net
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okhttp3:okhttp-urlconnection:3.10.0'
+    //gson
+    api 'com.google.code.gson:gson:2.8.2'
+    //glide
+    api('com.github.bumptech.glide:glide:4.7.1') {
+        exclude group: "com.android.support"
+    }
+    api 'com.android.support:support-fragment:27.1.1'
+    api('com.github.bumptech.glide:okhttp3-integration:4.7.1') {
+        exclude group: "com.android.support"
+        transitive = false
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    //event
+    api 'org.greenrobot:eventbus:3.1.1'
+    // rx
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'io.reactivex.rxjava2:rxjava:2.1.14-RC1'
+    api 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.tencent.bugly:crashreport:2.8.6'
+    debugApi('com.amitshekhar.android:debug-db:1.0.2') {
+        exclude group: 'com.google.code.gson'
+    }
+    api 'android.arch.lifecycle:runtime:1.1.1'
+    api 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+}
